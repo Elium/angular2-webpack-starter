@@ -18,13 +18,14 @@ describe('x-large directive', () => {
   // Create a test component to test directives
   @Component({
     template: '',
-    directives: [ XLarge ]
+    directives: [XLarge]
   })
-  class TestComponent {}
+  class TestComponent {
+  }
 
   it('should sent font-size to x-large', injectAsync([TestComponentBuilder], (tcb) => {
     return tcb.overrideTemplate(TestComponent, '<div x-large>Content</div>')
-      .createAsync(TestComponent).then((fixture: any) => {
+      .createAsync(TestComponent).then((fixture:any) => {
         fixture.detectChanges();
         let compiled = fixture.debugElement.nativeElement.children[0];
         expect(compiled.style.fontSize).toBe('x-large');

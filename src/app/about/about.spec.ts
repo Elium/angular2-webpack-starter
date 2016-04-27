@@ -18,7 +18,7 @@ describe('About', () => {
     About
   ]);
 
-  it('should log ngOnInit', inject([ About ], (about) => {
+  it('should log ngOnInit', inject([About], (about) => {
     spyOn(console, 'log');
     expect(console.log).not.toHaveBeenCalled();
 
