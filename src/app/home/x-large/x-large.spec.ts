@@ -1,18 +1,9 @@
-import {
-  it,
-  inject,
-  async,
-  describe,
-  beforeEachProviders
-} from '@angular/core/testing';
-import {TestComponentBuilder} from '@angular/compiler/testing';
-
-import {Component, provide} from '@angular/core';
-import {BaseRequestOptions, Http} from '@angular/http';
-import {MockBackend} from '@angular/http/testing';
+import {it, inject, async, describe} from "@angular/core/testing";
+import {TestComponentBuilder} from "@angular/compiler/testing";
+import {Component} from "@angular/core";
+import {XLarge} from "./x-large.directive";
 
 // Load the implementations that should be tested
-import {XLarge} from './x-large.directive';
 
 describe('x-large directive', () => {
   // Create a test component to test directives
@@ -22,7 +13,7 @@ describe('x-large directive', () => {
   })
   class TestComponent {
   }
-
+  
   it('should sent font-size to x-large', async(inject([TestComponentBuilder], (tcb) => {
     return tcb.overrideTemplate(TestComponent, '<div x-large>Content</div>')
       .createAsync(TestComponent).then((fixture:any) => {
