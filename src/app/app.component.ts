@@ -1,8 +1,8 @@
 /*
  * Angular 2 decorators and services
  */
-import {Component, ViewEncapsulation} from 'angular2/core';
-import {RouteConfig, Router} from 'angular2/router';
+import {Component, ViewEncapsulation} from '@angular/core';
+import {RouteConfig, Router} from '@angular/router-deprecated';
 
 import {Home} from './home';
 import {AppState} from './app.service';
@@ -84,8 +84,8 @@ export class App {
   name = 'Angular 2 Webpack Starter';
   url = 'https://twitter.com/AngularClass';
 
-  constructor(public appState:AppState,
-              public router:Router) {
+  constructor(
+    public appState: AppState) {
 
   }
 
